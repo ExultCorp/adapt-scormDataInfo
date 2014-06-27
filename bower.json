@@ -1,0 +1,14 @@
+{
+  "name": "adapt-scormDataInfo",
+  "homepage": "https://github.com/cgkineo/adapt-scormDataInfo",
+  "authors": [
+    "Oliver Foster <oliver.foster@kineo.com"
+  ],
+  "description": "%description",
+  "main": "/js/adapt-scormDataInfo.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPLv3"
+}
