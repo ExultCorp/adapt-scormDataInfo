@@ -22,10 +22,14 @@ define(function(require) {
 	Adapt.once('app:dataReady', function() {
 
 		var	scormDataInfoSettings = Adapt.course.get('_scoreDataInfo');
+		if (typeof scormDataInfoSettings == "undefined") {
+			console.log("adapt-scormDataInfo: _scoreDataInfo not found in course.json, not adding to drawer");
+			return;
+		}
 
 		var drawerObject = {
-	        title: scormDataInfoSettings.title,
-	        description: scormDataInfoSettings.description,
+	        title: scormDataInfoSettings.title || "Scorm Data Info",
+	        description: scormDataInfoSettings.description || "Displaying information about the LMS",
 	        className: 'scormDataInfo'
 	    };
 	    // Syntax for adding a Drawer item
