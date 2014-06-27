@@ -43,12 +43,12 @@ define(function(require) {
 
 		populateFromScormWrapper: function(){
 			this.set("connected", ScormWrapper.lmsConnected);
-			this.set("studentName", ignoreError(function(){ScormWrapper.getStudentName()},"n/a"));
-			this.set("lessonStatus", ignoreError(function(){ScormWrapper.getStatus()},"n/a"));
-			this.set("assessmentScore", ignoreError(function(){ScormWrapper.getScore()},"n/a"));
+			this.set("studentName", ignoreError(function(){return ScormWrapper.getStudentName()},"n/a"));
+			this.set("lessonStatus", ignoreError(function(){return ScormWrapper.getStatus()},"n/a"));
+			this.set("assessmentScore", ignoreError(function(){return ScormWrapper.getScore()},"n/a"));
 			var time = this.get("time");
 			time.sessionDuration = convertDateToTime((new Date())-Date.parse(ScormWrapper.startTime));
-			time.totalDuration = ignoreError(function(){ScormWrapper.getValue("cmi.core.total_time")},"n/a");
+			time.totalDuration = ignoreError(function(){return ScormWrapper.getValue("cmi.core.total_time")},"n/a");
 		}
 	});
 
