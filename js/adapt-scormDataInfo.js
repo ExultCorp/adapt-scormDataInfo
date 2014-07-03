@@ -21,7 +21,7 @@ define(function(require) {
 
 	Adapt.once('app:dataReady', function() {
 
-		var	scormDataInfoSettings = Adapt.course.get('_scoreDataInfo');
+		var	scormDataInfoSettings = Adapt.course.get('_scormDataInfo');
 		if (typeof scormDataInfoSettings == "undefined") {
 			console.log("adapt-scormDataInfo: _scoreDataInfo not found in course.json, not adding to drawer");
 			return;
